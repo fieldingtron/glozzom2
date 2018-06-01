@@ -39,4 +39,11 @@ gulp.task('fa', function(){
     .pipe(gulp.dest("src/css"));
 });
 
+gulp.task('copy', function(){
+  return gulp.src('src/**/*.*')
+    .pipe(gulp.dest('dist/'))
+});
+
+gulp.task('build', ['js', 'sass', 'fa', 'fonts','copy']);
+
 gulp.task('default', ['js', 'serve', 'fa', 'fonts']);
